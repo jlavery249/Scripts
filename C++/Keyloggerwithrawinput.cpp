@@ -1,3 +1,11 @@
+/////////////////////////////////
+//  Keylogger with raw input     //
+//  Created by John Lavery       //
+//  Year of 2017                 //
+//  Written in Winapi C++        //
+/////////////////////////////////
+
+
 // Minimal Key Logger using RAWINPUT
 
 #include <windows.h>
