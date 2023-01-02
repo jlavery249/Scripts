@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 
+#################################
+#  Buffer Overflow Template     #
+#  Created by John Lavery       #
+#  Year of 2019                 #
+#  Written in Python 3.8        #
+#################################
+
 import requests
 import os
 import time
