@@ -7,16 +7,20 @@
 #  Written in Python 3.8        #
 #################################
 
+# import modules
 import requests
 import os
 import time
 
+# user input
 fn = input("File name?: ")
 
+# clear screen open file
 os.system('clear')
 with open(fn) as f:
   urls = f.read().splitlines()
 
+# peform grab do not verify SSL
 for url in urls:
   r = requests.get(url,verify=False) # or verify=true for verifying SSL certs (more secure)
   print ("\n" + url+": "+r.headers['server'])
