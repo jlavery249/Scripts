@@ -1,4 +1,17 @@
 #!/bin/bash
+
+#################################################
+#  Linux-binutils-install                       #
+#  Created by John Lavery                       #
+#  Year of 2020                                 #
+#  Written in Bash                              #
+#  Description:                                 #
+#  a script I wrote to install some normal      #
+#  linux commands for MacOS that uses the brew  #
+#  package manager                              #
+#################################################
+
+
 brew install binutils
 brew install diffutils
 brew install ed
