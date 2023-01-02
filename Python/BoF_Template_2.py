@@ -1,5 +1,14 @@
 #!/usr/bin/python
 
+#################################
+#  Buffer Overflow Template     #
+#  (variant)                    #
+#  Created by John Lavery       #
+#  Year of 2017                 #
+#  Written in Python2.8         #
+#################################
+
+
 # import modules
 import socket
 import struct
