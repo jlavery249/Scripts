@@ -1,3 +1,10 @@
+/////////////////////////////////
+//  Another Winapi keylogger     //
+//  Created by John Lavery       //
+//  Year of 2017                 //
+//  Written in Winapi C++        //
+/////////////////////////////////
+
 
 #define _WIN32_WINNT 0x0501
 #include <windows.h>
