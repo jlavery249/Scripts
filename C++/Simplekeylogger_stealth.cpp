@@ -1,3 +1,11 @@
+/////////////////////////////////
+//  Banner Grab Script           //
+//  Created by John Lavery       //
+//  Year of 2017                 //
+//  Written in Winapi C++        //
+/////////////////////////////////
+
+
 #include <Windows.h> //needed to specifiy this is a windows program
 #include <cstdio> //another version of standard in/out
 #include <iostream> //Header that defines the standard input/output stream objects
