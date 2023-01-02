@@ -1,3 +1,13 @@
+############################################################################################################
+#  String-search.ps1                                                                                       #
+#  Created by John Lavery                                                                                  #
+#  Year of 2020                                                                                            #
+#  Written in Powershell                                                                                   #
+#  Description:                                                                                            #
+#  Asks for a string a user wants to look for and what directory they want to find it in, it then simply   #
+#  looks for just that                                                                                     #
+############################################################################################################
+
 Clear-Host
 
 $term = Read-Host 'Please enter the phrase or term you are looking for: '
