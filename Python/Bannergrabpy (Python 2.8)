@@ -1,11 +1,21 @@
 #!/usr/bin/python
 
+#################################
+#  Banner Grab Script           #
+#  Created by John Lavery       #
+#  Year of 2019                 #
+#  Written in Python 3.8        #
+#################################
+
+# import modules
 import requests
 import os
 import time
 
+# user input
 urllist = raw_input("Where is the file?")
 
+# clear screen, open file for r/w, grab banner
 os.system('clear')
 urls = open(urllist, "r")
 f = open('headers.txt', 'w')
@@ -19,6 +29,8 @@ for u in urls:
 	roundtrip = time.time() - start
 	f.write("\nTime Elapsed:" + str(roundtrip) + "\n")
 	time.sleep(1)
+
+# grab full banner details
 print("Do you want to see the full banner output for the urls instead?")
 choice = raw_input("\n> ")
 if choice == 'Y':
@@ -33,5 +45,3 @@ if choice == 'Y':
         	roundtrip = time.time() - start
         	f.write("\nTime Elapsed:" + str(roundtrip) + "\n")
 		time.sleep(1)
-	
-	#print (r.headers['server'])
