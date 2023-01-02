@@ -1,0 +1,37 @@
+#!/usr/bin/python
+
+import requests
+import os
+import time
+
+urllist = raw_input("Where is the file?")
+
+os.system('clear')
+urls = open(urllist, "r")
+f = open('headers.txt', 'w')
+for u in urls:
+	start = time.time()
+	r = requests.get(u, verify=False).headers
+	print("Grabbing banner from" + " " + u)
+	f.write("\nServer" + " " + u)
+	#f.write(str(r))
+	f.write("Banner:" + str(r['server']))
+	roundtrip = time.time() - start
+	f.write("\nTime Elapsed:" + str(roundtrip) + "\n")
+	time.sleep(1)
+print("Do you want to see the full banner output for the urls instead?")
+choice = raw_input("\n> ")
+if choice == 'Y':
+	urls = open (urllist, 'r')
+	f = open('fullheaders.txt', 'w')
+	for u in urls:
+        	start = time.time()
+        	r = requests.get(u, verify=False).headers
+		print("Grabbing of detailed banner from" + " " + u)
+        	f.write("\nServer" + " " + u)
+        	f.write(str(r))
+        	roundtrip = time.time() - start
+        	f.write("\nTime Elapsed:" + str(roundtrip) + "\n")
+		time.sleep(1)
+	
+	#print (r.headers['server'])
