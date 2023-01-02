@@ -1,4 +1,12 @@
 #!/usr/bin/python
+
+#################################
+#  Simple BoF Template          #
+#  Created by John Lavery       #
+#  Year of 2017                 #
+#  Written in Python2.8         #
+#################################
+
 import socket
 import struct
 import time
