@@ -1,3 +1,10 @@
+#################################
+#  x86 Assembly shell           #
+#  Created by John Lavery       #
+#  Year of 2017                 #
+#  Written in x86 assembly code #
+#################################
+
 [bits 32]						; defines x86
 ;Hashes of functions
 %define Rec 0x0000000
