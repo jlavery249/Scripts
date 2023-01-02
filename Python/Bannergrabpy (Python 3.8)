@@ -18,6 +18,6 @@ with open(fn) as f:
   urls = f.read().splitlines()
 
 for url in urls:
-  r = requests.get(url,verify=False)
+  r = requests.get(url,verify=False) # or verify=true for verifying SSL certs (more secure)
   print ("\n" + url+": "+r.headers['server'])
   print (r.elapsed.total_seconds())
