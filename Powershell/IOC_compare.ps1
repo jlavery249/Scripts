@@ -1,7 +1,15 @@
+############################################################################################################
+#  IOC compare                                                                                             #
+#  Created by John Lavery                                                                                  #
+#  Year of 2018                                                                                            #
+#  Written in Powershell                                                                                   #
+#  Description:                                                                                            #
+#  Scans through . #
+############################################################################################################
+
 $a = 1
-$ipiocs = Get-Content ips.txt
-$fileiocs = Get-Content files.txt
-$regiocs = get-content reg.txt
+$fileiocs = Get-Content <list of iocs you are looking for>
+$regiocs = get-content <
 
 while ($a -le 255)
 {
