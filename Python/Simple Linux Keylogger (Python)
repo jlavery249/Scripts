@@ -1,4 +1,11 @@
 
+#################################
+#  Simple Linux Keylogger       #
+#  Created by John Lavery       #
+#  Year of 2017                 #
+#  Written in Python 3.8        #
+#################################
+
 # import modules
 import pyxhook
 
