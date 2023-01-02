@@ -1,5 +1,5 @@
 /////////////////////////////////
-//  Banner Grab Script           //
+//  Simplekeylogger with Stealth //
 //  Created by John Lavery       //
 //  Year of 2017                 //
 //  Written in Winapi C++        //
