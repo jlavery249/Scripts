@@ -11,4 +11,4 @@
 ############################################################################################################
 
 Get-ChildItem '<insert directory here>' -Recurse | ? { $_.Extension -eq ".rar" -or $_.Extension -eq "zip" }
-Get-ChildItem '<insert directory here>' -Recurse -Include *.zip *.rar
+Get-ChildItem '<insert directory here>' -Recurse -Include *.zip, *.rar
