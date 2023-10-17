@@ -2,7 +2,7 @@
 
 # Author: JohnLavery
 # Date: 10/17/23
-# Description: A Bash script to run Volatility plugins on a memory dump file.
+# Description: A Bash script to run Volatility plugins on a memory dump file to eliminate some manual tasks.
 # Usage: ./volscript.sh <memory file>
 #        Ex: ./volscript.sh memory_dump.bin
 
