@@ -1,0 +1,46 @@
+# Perform backup, copy, and reboot tasks playbook
+
+- name: Perform backup, copy, and reboot tasks
+  hosts: all
+  become: yes  # Run tasks with elevated privileges using sudo
+
+  tasks:
+    # Task to create a backup directory
+    - name: Create backups directory
+      shell: mkdir -p /config/backup_configs
+
+    # Task to copy config.boot to backups directory and remove the original
+    - name: Copy config.boot to backups directory and remove the original
+      shell: 
+        cmd: |
+          cp /config/config.boot /config/backup_configs 
+          rm /config/config.boot 
+      when: inventory_hostname == '192.168.203.190'  # Only execute on specific host
+
+    # Task to reboot vyos (uses sudo)
+    - name: Reboot vyos
+      become: yes 
+      reboot:
+
+    # Task to wait for the host to come back after reboot
+    - name: Wait for the host to come back after reboot
+      wait_for_connection:
+        timeout: 300  # Adjust the timeout as needed
+
+    # Task to check host availability with ping
+    - name: Check host availability with ping
+      command: ping -c 4 192.168.203.190
+      register: ping_result  
+
+    # Task to display the result of the ping command
+    - name: Display ping result
+      debug:
+        var: ping_result.stdout_lines 
+
+
+
+
+# inventory file to make this work:
+#
+# [all]
+#192.168.203.190 ansible_user=vyos ansible_password=vyos
