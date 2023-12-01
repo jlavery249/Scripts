@@ -1,0 +1,22 @@
+---
+- name: Perform backup and copy tasks
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Create backups directory
+      shell: mkdir -p /config/backup_configs
+
+    - name: Copy config.boot to backups directory
+      shell: cp /config/config.boot /config/backup_configs
+
+    - name: Copy config.boot to vyos
+      copy:
+        src: ~/Documents/config.boot
+        dest: /config/
+      when: inventory_hostname == '192.168.124.120'
+
+    - name: Reboot vyos
+      become: yes
+      reboot:
+        test_command: ping -i 0.2 -c 3 192.168.124.120
