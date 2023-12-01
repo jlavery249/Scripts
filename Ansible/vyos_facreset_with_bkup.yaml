@@ -1,3 +1,18 @@
+############################################################################################################
+#  Vyos Router Factory Reset Playbook                                                                      #
+#  Created by John Lavery                                                                                  #
+#  Year of 2023                                                                                            #
+#  Ansible Playbook                                                                                        #
+#  Description:                                                                                            #
+#  A playbook that can be used to backup the current config into a backup_configs directory, remove the    #
+#  current config and reboot.                                                                              #
+#                                                                                                          #
+# WARNING: Make sure you have kvm console access to the router after this playbook is ran or you will have #
+# issues with trying to setup a new config.                                                                #
+############################################################################################################
+
+
+
 # Perform backup, copy, and reboot tasks playbook
 
 - name: Perform backup, copy, and reboot tasks
@@ -21,22 +36,6 @@
     - name: Reboot vyos
       become: yes 
       reboot:
-
-    # Task to wait for the host to come back after reboot
-    - name: Wait for the host to come back after reboot
-      wait_for_connection:
-        timeout: 300  # Adjust the timeout as needed
-
-    # Task to check host availability with ping
-    - name: Check host availability with ping
-      command: ping -c 4 192.168.203.190
-      register: ping_result  
-
-    # Task to display the result of the ping command
-    - name: Display ping result
-      debug:
-        var: ping_result.stdout_lines 
-
 
 
 
