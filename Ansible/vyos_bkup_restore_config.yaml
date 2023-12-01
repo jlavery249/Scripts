@@ -1,22 +1,27 @@
----
+# Perform backup and copy tasks playbook
+
 - name: Perform backup and copy tasks
   hosts: all
-  become: yes
+  become: yes  # Run tasks with elevated privileges using sudo
 
   tasks:
+    # Task to create a backups directory
     - name: Create backups directory
       shell: mkdir -p /config/backup_configs
 
+    # Task to copy config.boot to backups directory
     - name: Copy config.boot to backups directory
       shell: cp /config/config.boot /config/backup_configs
 
+    # Task to copy config.boot to vyos (conditional on specific host)
     - name: Copy config.boot to vyos
       copy:
-        src: ~/Documents/config.boot
-        dest: /config/
-      when: inventory_hostname == '192.168.124.120'
+        src: ~/Documents/config.boot  # Source file path
+        dest: /config/  # Destination directory path
+      when: inventory_hostname == '192.168.124.120'  # Only execute on specific host
 
+    # Task to reboot vyos
     - name: Reboot vyos
-      become: yes
+      become: yes  # Run the reboot command with elevated privileges
       reboot:
-        test_command: ping -i 0.2 -c 3 192.168.124.120
+        test_command: ping -i 0.2 -c 3 192.168.124.120  # Test host reachability before and after reboot
