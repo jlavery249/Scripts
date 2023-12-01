@@ -1,3 +1,16 @@
+############################################################################################################
+#  Vyos Router Backup and Restore Config Playbook                                                          #
+#  Created by John Lavery                                                                                  #
+#  Year of 2023                                                                                            #
+#  Ansible Playbook                                                                                        #
+#  Description:                                                                                            #
+#  A playbook that can be used to backup the current config into a backup_configs directory, copy over a   #
+#  new config from your local directory and scp it over to the router. It will reboot after and ping to    #
+#  ensure that it is back up                                                                               #
+#                                                                                                          #
+#  You need to have a copy of the config you want to send over already in the source dir you specify       #
+############################################################################################################
+
 # Perform backup and copy tasks playbook
 
 - name: Perform backup and copy tasks
