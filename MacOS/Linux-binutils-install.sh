@@ -47,3 +47,7 @@ brew install unzip
 brew install vim
 brew install macvim
 brew install zsh
+
+# Along with this, if you would like to make your mac terminal look similar to Ubuntu's bash terminal
+# visit https://jsonsingh.medium.com/ubuntu-like-terminal-in-mac-bash-9afe37b09aa
+# Special thanks to Json Singh for writing that Medium blog
