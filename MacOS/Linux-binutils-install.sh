@@ -51,3 +51,4 @@ brew install zsh
 # Along with this, if you would like to make your mac terminal look similar to Ubuntu's bash terminal
 # visit https://jsonsingh.medium.com/ubuntu-like-terminal-in-mac-bash-9afe37b09aa
 # Special thanks to Json Singh for writing that Medium blog
+# Fixed .bash_profile is in https://github.com/jlavery249/Scripts/edit/main/MacOS/
